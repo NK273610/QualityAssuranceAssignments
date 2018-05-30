@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="" attributeFormDefault="unqualified" elementFormDefault="qualified"  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="order">
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:element name="dealer" minOccurs="0">
+                    <xsd:complexType mixed="true">
+                        <xsd:sequence>
+                            <xsd:element name="dealerid" minOccurs="0" type="xsd:normalizedString"/>
+                            <xsd:element name="dealeraccesskey" minOccurs="0" type="xsd:normalizedString"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="orderitems" minOccurs="0">
+                    <xsd:complexType mixed="true">
+                        <xsd:sequence>
+                            <xsd:element name="item" maxOccurs="unbounded">
+                                <xsd:complexType mixed="true">
+                                    <xsd:sequence>
+                                        <xsd:element name="partnumber" minOccurs="0" type="xsd:int"/>
+                                        <xsd:element name="quantity" minOccurs="0" type="xsd:int"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="deliveryaddress" minOccurs="0">
+                    <xsd:complexType mixed="true">
+                        <xsd:sequence>
+                            <xsd:element name="name" minOccurs="0" type="xsd:string"/>
+                            <xsd:element name="street" minOccurs="0" type="xsd:string"/>
+                            <xsd:element name="city" minOccurs="0" type="xsd:normalizedString"/>
+                            <xsd:element name="province" minOccurs="0" type="xsd:normalizedString"/>
+                            <xsd:element name="postalcode" minOccurs="0" type="xsd:normalizedString"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

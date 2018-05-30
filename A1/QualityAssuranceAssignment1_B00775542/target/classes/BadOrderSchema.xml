@@ -1,0 +1,25 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+
+    <!-- The dealer submitting the order -->
+    <dealer>
+        <!-- The dealer ID, identifies the dealer. Must validate that the dealer is a known
+             dealer. -->
+        <dealerid>XXX-1234-ABCD-1234</dealerid>
+        <!-- The dealer access key, used by the security class to authenticate the dealer. -->
+        <dealeraccesskey>kkklas8882kk23nllfjj88290</dealeraccesskey>
+    </dealer>
+    <!-- A list of items order by the dealer. -->
+    <orderitems>
+        <!-- An item in the list of items ordered by the dealer. -->
+
+        <!-- Another item, there can be an unlimited number of items in the orderitems list. -->
+        <item>
+            <partnumber>5678</partnumber>
+            <quantity>25</quantity>
+        </item>
+    </orderitems>
+    <!-- The delivery address to send the parts to. -->
+
+</order>
