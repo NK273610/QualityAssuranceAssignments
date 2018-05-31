@@ -18,7 +18,6 @@ public class secure implements Security {
 
         HashMap<String,String> mockdelaer=db.getDealerData();
 
-
         if(mockdelaer.containsKey(dealerid))
         {
             if(mockdelaer.get(dealerid).equals(dealeraccesskey))

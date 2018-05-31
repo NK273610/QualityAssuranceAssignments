@@ -6,7 +6,7 @@
             dealer. -->
        <dealerid>XXX-1234-ABCD-1234</dealerid>
        <!-- The dealer access key, used by the security class to authenticate the dealer. -->
-       <dealeraccesskey>kkklas8882kk23nllfjj88290</dealeraccesskey>
+       <dealeraccesskey>kkklas882kk23nllfjj88290</dealeraccesskey>
 </dealer>
 <!-- A list of items order by the dealer. -->
  <orderitems>
