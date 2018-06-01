@@ -59,7 +59,7 @@ public class MainClass {
            Element result = doc.createElement("result");
            result.appendChild(doc.createTextNode("failure"));
            Element error = doc.createElement("error");
-           error.appendChild(doc.createTextNode("Invalid order"));
+           error.appendChild(doc.createTextNode("Invalid order schema"));
            rootElement.appendChild(result);
            rootElement.appendChild(error);
            TransformerFactory transformerFactory = TransformerFactory.newInstance();

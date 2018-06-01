@@ -9,6 +9,7 @@ public class validPart implements part {
 
     DBclass db;
 
+    //valid part to check if part no is valid and quantity less than quantity in database
     public validPart(DBclass db) {
         this.db = db;
     }

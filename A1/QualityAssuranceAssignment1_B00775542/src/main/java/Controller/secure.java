@@ -13,6 +13,8 @@ public class secure implements Security {
         this.db = db;
     }
 
+    //to check if dealer is authorizied
+    @Override
     public boolean IsDealerAuthorized(String dealerid, String dealeraccesskey) {
 
         if(dealerid.equalsIgnoreCase("") || dealeraccesskey.equalsIgnoreCase(""))

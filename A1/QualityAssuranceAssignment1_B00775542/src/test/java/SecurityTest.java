@@ -16,10 +16,14 @@ import static org.junit.Assert.assertTrue;
 @RunWith(MockitoJUnitRunner.class)
 public class SecurityTest {
 
+    //we mock the database class so when called by test class it gets data from mock class in test package
     @Mock
     DBclass db;
 
+    //object of MockData in test package
     MockData md;
+
+    //object of secure class
     secure sc;
 
     @Before
@@ -32,6 +36,7 @@ public class SecurityTest {
 
     }
 
+    //In this we check if delarer id and access key are present in mock data
     @Test
     @DisplayName("DealerAuthorizedTest")
     public void IsDealerAuthorized() throws JAXBException {
@@ -41,7 +46,7 @@ public class SecurityTest {
 
     }
     @Test
-    @DisplayName("DealerAuthorizedTest for regex")
+    @DisplayName("DealerAuthorizedTest for dealerid for regular expression")
     public void IsDealerAuthorizedRegex() throws JAXBException {
 
 

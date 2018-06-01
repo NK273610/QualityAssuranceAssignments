@@ -2,6 +2,7 @@ import java.util.HashMap;
 
 public class MockData {
 
+    //mock object for dealer id and access key
     public  HashMap<String,String> getMockDealer()
     {
         HashMap<String,String> mockdealer=new HashMap<>();
@@ -16,6 +17,7 @@ public class MockData {
         return mockdealer;
     }
 
+    //mock object for partno and quantity
     public   HashMap<Integer,Integer> getMockItem()
     {
         HashMap<Integer,Integer> mockitem=new HashMap<>();

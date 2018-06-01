@@ -16,6 +16,7 @@ public class ValidateData implements Interface.ValidateData {
 
 
 
+    //check null for dealer with regex
     @Override
     public boolean check_Dealer_for_null(dealer dealer) {
 
@@ -42,6 +43,7 @@ public class ValidateData implements Interface.ValidateData {
 
     }
 
+    //check null for dealer address
     @Override
     public boolean check_DealerAddress_for_null(DeliveryAddress deliveryAddress) {
         if (deliveryAddress.city == null ||
@@ -57,6 +59,7 @@ public class ValidateData implements Interface.ValidateData {
         return false;
     }
 
+    //check null for dealer item
     @Override
     public boolean check_DealerItem_for_correct(ArrayList<item> item_list) {
 

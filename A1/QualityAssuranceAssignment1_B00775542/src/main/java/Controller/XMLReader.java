@@ -26,6 +26,7 @@ import java.util.ArrayList;
 
 public class XMLReader implements Interface.XMLReader {
 
+    //get data rrom the xml
     @Override
     public order getDataFromXML(String filepath) throws JAXBException
     {
@@ -47,6 +48,7 @@ public class XMLReader implements Interface.XMLReader {
         return order;
     }
 
+    //check for the null values in xml
     public boolean check_null_values(String filepath) throws JAXBException
     {
         XMLReader xr=new XMLReader();
@@ -68,6 +70,8 @@ public class XMLReader implements Interface.XMLReader {
 
         return true;
     }
+
+    //validate xml schema of the given file with order.xsd
     @Override
     public boolean validateXMLSchema(String filepath) {
 
@@ -100,6 +104,8 @@ public class XMLReader implements Interface.XMLReader {
         return true;
     }
 
+    //Method to convert from xml to xsd.
+    //We have used the library so no test case is written as we used it once to generate xsd similar to object
     @Override
     public void xmlToxsd() throws IOException, ParseException {
         XsdGen gen = new XsdGen();

@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 public class partmanagerTest {
 
+    //partmanager object
     partmanager partmng;
 
 
@@ -27,6 +28,7 @@ public class partmanagerTest {
 
     }
 
+    //check if we have valid part number,quantity and dealer address
     @Test
     @DisplayName("check for success")
     public void SubmitPartManagerResponseSucess(){
@@ -34,6 +36,8 @@ public class partmanagerTest {
         assertEquals(PARTMANAGER.PartResponse.SUCCESS,partmng.SubmitPartForManufactureAndDelivery(1234,1,OrderMock.getDeliveryAddress()));
 
     }
+
+    //check if we have invalid part number
     @Test
     @DisplayName("check for No Longer Manufactured")
     public void SubmitPartManagerResponseNoLongerManufactured(){
@@ -42,6 +46,7 @@ public class partmanagerTest {
 
     }
 
+    //check when part no is valid but quantity in dtabase is less then quantity ordered by dealer
     @Test
     @DisplayName("check for Out Of Stock")
     public void SubmitPartManagerResponseOutOfStock(){

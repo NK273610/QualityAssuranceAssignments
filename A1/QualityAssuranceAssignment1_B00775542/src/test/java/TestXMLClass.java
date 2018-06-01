@@ -28,30 +28,36 @@ public class TestXMLClass {
         objExpected=null;
     }
 
+    // In this test we check if xml having valid schema is detected by comapring with xsd
     @Test
-    @DisplayName("check if xml has valid schema")
+    @DisplayName("check for xml having valid schema")
     public void XmlSchemaValidate(){
 
         assertTrue(xmlreader.validateXMLSchema("order.xml"));
 
     }
 
+    // In this test we check if xml having invalid schema is detected by comapring with xsd
     @Test
-    @DisplayName("check if xml has in valid schema")
+    @DisplayName("check for xml having invalid schema")
     public void XmlSchemaValidateInvalid(){
 
         assertFalse(xmlreader.validateXMLSchema("BadOrderSchema.xml"));
 
     }
+
+    // In this this we check if there are no null values in xml if any feild is null it will return true
     @Test
-    @DisplayName("check null values in xml")
+    @DisplayName("check for null values in xml")
     public void CheckNullValuesXml() throws JAXBException {
 
         assertTrue(xmlreader.check_null_values("orderNull.xml"));
 
     }
+
+    // In this this we compare the data we get from paring xml to object having expected value
     @Test
-    @DisplayName("check data we get from the xml")
+    @DisplayName("check data we get from parsing xml")
     public void getDataFromXml() throws JAXBException {
 
         order objcActual = xmlreader.getDataFromXML("order.xml");
