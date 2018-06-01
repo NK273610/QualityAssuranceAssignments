@@ -13,7 +13,7 @@
        <!-- An item in the list of items ordered by the dealer. -->
        <item>
                <!-- The part number to submit to PARTMANAGER. -->
-               <partnumber>12345</partnumber>
+               <partnumber>1234</partnumber>
                <!-- The quantity ordered to submit to PARTMANAGER. -->
                <quantity>2</quantity>
        </item>

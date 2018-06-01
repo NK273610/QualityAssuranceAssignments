@@ -17,6 +17,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.util.Scanner;
 
 
 public class MainClass {
@@ -36,7 +37,9 @@ public class MainClass {
         partmanager pm;
         int temp=0;
         order or=null;
-        String filename="order.xml";
+        System.out.println("Enter the name of the file that you have kept in resource folder under src/main");
+        Scanner scn=new Scanner(System.in);
+        String filename=scn.next();
        if (xr.validateXMLSchema(filename)==true)
        {
            if(xr.check_null_values(filename)==false)
@@ -107,7 +110,7 @@ public class MainClass {
                    else
                    {
                        result.appendChild(doc.createTextNode("Failure"));
-                       error.appendChild(doc.createTextNode(String.valueOf(PARTMANAGER.PartResponse.NO_LONGER_MANUFACTURED)));
+                       error.appendChild(doc.createTextNode(String.valueOf(PARTMANAGER.PartResponse.NO_LONGER_MANUFACTURED+" or invalid part")));
                    }
                    item.appendChild(partno);
                    item.appendChild(quantity);

@@ -15,7 +15,10 @@ public class secure implements Security {
 
     public boolean IsDealerAuthorized(String dealerid, String dealeraccesskey) {
 
-
+        if(dealerid.equalsIgnoreCase("") || dealeraccesskey.equalsIgnoreCase(""))
+        {
+            return false;
+        }
         HashMap<String,String> mockdelaer=db.getDealerData();
 
         if(mockdelaer.containsKey(dealerid))

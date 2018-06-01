@@ -35,6 +35,14 @@ public class TestXMLClass {
         assertTrue(xmlreader.validateXMLSchema("order.xml"));
 
     }
+
+    @Test
+    @DisplayName("check if xml has in valid schema")
+    public void XmlSchemaValidateInvalid(){
+
+        assertFalse(xmlreader.validateXMLSchema("BadOrderSchema.xml"));
+
+    }
     @Test
     @DisplayName("check null values in xml")
     public void CheckNullValuesXml() throws JAXBException {

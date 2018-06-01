@@ -50,7 +50,7 @@ public class SecurityTest {
     }
 
     @Test
-    @DisplayName("DealerAuthorizedTest for Non DealerId")
+    @DisplayName("DealerAuthorizedTest for invalid DealerId")
     public void IsDealerAuthorizedDealerIdNotValid() throws JAXBException {
 
 
