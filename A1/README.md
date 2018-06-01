@@ -17,8 +17,7 @@ To test the methods we have implemented test classes in test folder. Please run 
 ### Break down class mthods of Controller
 There are in total five classes in controller which handles the logic having it's interfaces in interface folder.
 
-
- 1.secure class:- checks if dealer id and dealer access key is not null and it is valid i.e. present in mock database.
+1.secure class:- checks if dealer id and dealer access key is not null and it is valid i.e. present in mock database.
 
 2. validPart class:-checks if partnumber is valid i.e. it is present in database and quantity demanded is less than or equal to quantity present in database for that part number.
 
@@ -30,9 +29,27 @@ There are in total five classes in controller which handles the logic having it'
 
 ### Test classes
 Explain what these tests test and why
-
+Test case to check if dealer id has correct pattern. Here we have changed the pattern and tried testing the method.
 ```
-Give an example
+@Test
+    @DisplayName("DealerAuthorizedTest for dealerid for regular expression")
+    public void IsDealerAuthorizedRegex() throws JAXBException {
+
+
+        assertFalse(sc.IsDealerAuthorized("XXX-1234-ABD-1234", "kkklas8882kk23nllfjj88290"));
+
+    }
+```
+Test case to check if part number is valid having quantity in order less than that in database.
+```
+@Test
+    @DisplayName("Part quantity validity")
+    public void IsPartQuantityNoValid() throws JAXBException {
+
+
+       assertFalse(vp.check_valid_part(1234,25));
+
+    }
 ```
 
 ### File Deployment and output response.xml
