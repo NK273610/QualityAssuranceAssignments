@@ -6,14 +6,14 @@
             dealer. -->
        <dealerid>XXX-1234-ABCD-1234</dealerid>
        <!-- The dealer access key, used by the security class to authenticate the dealer. -->
-       <dealeraccesskey>kkklas882kk23nllfjj88290</dealeraccesskey>
+       <dealeraccesskey>kkklas8882kk23nllfjj88290</dealeraccesskey>
 </dealer>
 <!-- A list of items order by the dealer. -->
  <orderitems>
        <!-- An item in the list of items ordered by the dealer. -->
        <item>
                <!-- The part number to submit to PARTMANAGER. -->
-               <partnumber>1234</partnumber>
+               <partnumber>12345</partnumber>
                <!-- The quantity ordered to submit to PARTMANAGER. -->
                <quantity>2</quantity>
        </item>

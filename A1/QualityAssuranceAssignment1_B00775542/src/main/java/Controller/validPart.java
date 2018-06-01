@@ -18,7 +18,7 @@ public class validPart implements part {
         HashMap<Integer, Integer> mockitem = db.getPartData();
 
         if (mockitem.containsKey(part_no)) {
-            if (mockitem.get(part_no) > 0 && quantity<mockitem.get(part_no)) {
+            if (mockitem.get(part_no) > 0 && quantity<=mockitem.get(part_no)) {
                 return true;
             }
 

@@ -10,6 +10,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import javax.xml.bind.JAXBException;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -37,6 +38,31 @@ public class SecurityTest {
 
 
         assertTrue(sc.IsDealerAuthorized("XXX-1234-ABCD-1234", "kkklas8882kk23nllfjj88290"));
+
+    }
+    @Test
+    @DisplayName("DealerAuthorizedTest for regex")
+    public void IsDealerAuthorizedRegex() throws JAXBException {
+
+
+        assertFalse(sc.IsDealerAuthorized("XXX-1234-ABD-1234", "kkklas8882kk23nllfjj88290"));
+
+    }
+
+    @Test
+    @DisplayName("DealerAuthorizedTest for Non DealerId")
+    public void IsDealerAuthorizedDealerIdNotValid() throws JAXBException {
+
+
+        assertFalse(sc.IsDealerAuthorized("XXX-1234-KPTM-1234", "kkklas8882kk23nllfjj88290"));
+
+    }
+    @Test
+    @DisplayName("DealerAuthorizedTest for Access Key invalid")
+    public void IsDealerAuthorizedAccessKeyNotValid() throws JAXBException {
+
+
+        assertFalse(sc.IsDealerAuthorized("XXX-1235-DEFG-1235", "8882kk23nllfjj88290"));
 
     }
 }

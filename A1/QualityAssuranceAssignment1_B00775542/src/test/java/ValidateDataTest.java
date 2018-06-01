@@ -74,7 +74,16 @@ public class ValidateDataTest {
     public void IsPartNoValid() throws JAXBException {
 
 
-        assertTrue(vp.check_valid_part(1234));
+        assertTrue(vp.check_valid_part(1234,2));
+
+    }
+
+    @Test
+    @DisplayName("Part quantity validity")
+    public void IsPartQuantityNoValid() throws JAXBException {
+
+
+        assertFalse(vp.check_valid_part(1234,25));
 
     }
 

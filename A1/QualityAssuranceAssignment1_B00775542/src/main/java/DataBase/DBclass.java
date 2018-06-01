@@ -28,7 +28,8 @@ public class DBclass implements Interface.DBclass {
     public HashMap<Integer, Integer> getPartData()
     {
         data2=new HashMap<>();
-        data2.put(1234,23);
+        data2.put(1234,123);
+        data2.put(5678,100);
         data2.put(2254,20);
         data2.put(1200,8);
         data2.put(1987,4);

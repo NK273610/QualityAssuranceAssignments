@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><order><result>failure</result><error>Dealer Not Authorized</error></order>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><order><orderitems><item><partnumber>12345</partnumber><quantity>2</quantity><result>Failure</result><errormessage>NO_LONGER_MANUFACTURED</errormessage></item><item><partnumber>5678</partnumber><quantity>25</quantity><result>SUCCESS</result><errormessage/></item></orderitems></order>

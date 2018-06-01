@@ -1,9 +1,6 @@
 package main;
 
-import Controller.XMLReader;
-import Controller.partmanager;
-import Controller.secure;
-import Controller.validPart;
+import Controller.*;
 import Data.order;
 import DataBase.DBclass;
 import Interface.PARTMANAGER;
@@ -46,7 +43,6 @@ public class MainClass {
            {
                or=new order();
                or=xr.getDataFromXML(filename);
-
            }
            else
            {
@@ -78,16 +74,53 @@ public class MainClass {
            db=new DBclass();
            pm=new partmanager();
            sec=new secure(db);
+           Element rootElement2 = doc.createElement("orderitems");
+           rootElement.appendChild(rootElement2);
+
            if (sec.IsDealerAuthorized(or.getDealer().getDealerid(),or.getDealer().getDealeraccesskey())==true)
            {
                for (int i=0;i<or.getOrderitem().size();i++)
                {
-                   if(pm.SubmitPartForManufactureAndDelivery(or.getOrderitem().get(i).getPartnumber(),
-                           or.getOrderitem().get(i).getQuantity(),or.getDeliveryAddress())== PARTMANAGER.PartResponse.SUCCESS)
+                   Element item = doc.createElement("item");
+                   rootElement2.appendChild(item);
+                   Element partno = doc.createElement("partnumber");
+                   Element quantity = doc.createElement("quantity");
+                   Element result = doc.createElement("result");
+                   Element error = doc.createElement("errormessage");
+                   PARTMANAGER.PartResponse res=pm.SubmitPartForManufactureAndDelivery(or.getOrderitem().get(i).getPartnumber(),
+                           or.getOrderitem().get(i).getQuantity(),or.getDeliveryAddress());
+                   partno.appendChild(doc.createTextNode(String.valueOf(or.getOrderitem().get(i).getPartnumber())));
+                   quantity.appendChild(doc.createTextNode(String.valueOf(or.getOrderitem().get(i).getQuantity())));
+                   if(res== PARTMANAGER.PartResponse.SUCCESS)
                    {
-                       temp=temp+1;
+                       result.appendChild(doc.createTextNode(String.valueOf(PARTMANAGER.PartResponse.SUCCESS)));
+                       error.appendChild(doc.createTextNode(""));
+
+
                    }
+                   else if(res==PARTMANAGER.PartResponse.OUT_OF_STOCK)
+                   {
+                       result.appendChild(doc.createTextNode("Failure"));
+                       error.appendChild(doc.createTextNode(String.valueOf(PARTMANAGER.PartResponse.OUT_OF_STOCK)));
+
+                   }
+                   else
+                   {
+                       result.appendChild(doc.createTextNode("Failure"));
+                       error.appendChild(doc.createTextNode(String.valueOf(PARTMANAGER.PartResponse.NO_LONGER_MANUFACTURED)));
+                   }
+                   item.appendChild(partno);
+                   item.appendChild(quantity);
+                   item.appendChild(result);
+                   item.appendChild(error);
                }
+
+               TransformerFactory transformerFactory = TransformerFactory.newInstance();
+               Transformer transformer = transformerFactory.newTransformer();
+               DOMSource source = new DOMSource(doc);
+               StreamResult fileres = new StreamResult(new File("response.xml"));
+               transformer.transform(source, fileres);
+               return;
            }
 
            else
@@ -109,16 +142,7 @@ public class MainClass {
            }
        }
 
-       if(temp==or.getOrderitem().size())
-       {
 
-
-       }
-
-       else
-       {
-
-       }
 
     }
 }
