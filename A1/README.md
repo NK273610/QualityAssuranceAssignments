@@ -15,12 +15,17 @@ For any file to be read externally please put it in resource folder and just giv
 To test the methods we have implemented test classes in test folder. Please run the classses in order to tests the methods impemented. 
 
 ### Break down class mthods of Controller
-There are in total five classes in controller which handles the logic having it's interfaces in interface folder. 
-secure class:- checks if dealer id and dealer access key is not null and it is valid i.e. present in mock database.
-validPart class:-checks if partnumber is valid i.e. it is present in database and quantity demanded is less than or equal to quantity present in database for that part number.
-XMLReader class:- It has methods to check null values in xml that we are reading, validate it's schema, get data from xml and convert xml to xsd.
-ValidateData:- We validate the dealerid that we get from xml mathces the pattern and check the values are not null for every specific entry in xml. We have given implementation of check null values method in this class.
-partmanager class:- Here we verify if partno and quantity is valid and check that delivery address is not null. 
+There are in total five classes in controller which handles the logic having it's interfaces in interface folder.
+
+1.secure class:- checks if dealer id and dealer access key is not null and it is valid i.e. present in mock database.
+
+2. validPart class:-checks if partnumber is valid i.e. it is present in database and quantity demanded is less than or equal to quantity present in database for that part number.
+
+3. XMLReader class:- It has methods to check null values in xml that we are reading, validate it's schema, get data from xml and convert xml to xsd.
+
+4. ValidateData:- We validate the dealerid that we get from xml mathces the pattern and check the values are not null for every specific entry in xml. We have given implementation of check null values method in this class.
+
+5. partmanager class:- Here we verify if partno and quantity is valid and check that delivery address is not null. 
 
 ### Test classes
 Explain what these tests test and why
