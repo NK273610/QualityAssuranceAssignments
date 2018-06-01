@@ -10,6 +10,24 @@ From terminal first compile all the files then run the MainClass.class file, whi
 Put the xml file you want to read in resource folder and then type the name of file when it asks to enter the full file name.
 For any file to be read externally please put it in resource folder and just give name of file. We have also included some xml for testing in resource folder. All the test cases are written in test folder for every class we have in controller of main method. I have created some redudancy in main method for generating the response but as this assignment primarily focused on test cases for methods, So I have mainly focused on all boundary and error cases.
 
+### Mock Data For dealer id and dealer access 
+        data.put("XXX-1234-ABCD-1234","kkklas8882kk23nllfjj88290");
+        data.put("XXX-1235-DEFG-1235","kkklas8882kk23nllfjj88291");
+        data.put("XXX-1237-ACDC-1237","kkklas8882kk23nllfjj88292");
+        data.put("XXX-1238-BAND-1238","kkklas8882kk23nllfjj88293");
+        data.put("XXX-1239-LTTF-1239","kkklas8882kk23nllfjj88294");
+        data.put("XXX-1230-KBDC-1230","kkklas8882kk23nllfjj88295");
+        
+### Mock Data For part no and quantity
+        data2.put(1234,123);
+        data2.put(5678,100);
+        data2.put(2254,20);
+        data2.put(1200,8);
+        data2.put(1987,4);
+        data2.put(1377,23);
+        data2.put(1900,2);
+       
+## Please make sure I am using these data as mock data so please test with values in this data for daaler and part number.
 
 ### Running the tests
 To test the methods we have implemented test classes in test folder. Please run the classses in order to tests the methods impemented. 
