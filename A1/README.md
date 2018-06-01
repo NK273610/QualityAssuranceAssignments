@@ -17,6 +17,7 @@ To test the methods we have implemented test classes in test folder. Please run 
 ### Break down class mthods of Controller
 There are in total five classes in controller which handles the logic having it's interfaces in interface folder.
 
+
 1.secure class:- checks if dealer id and dealer access key is not null and it is valid i.e. present in mock database.
 
 2. validPart class:-checks if partnumber is valid i.e. it is present in database and quantity demanded is less than or equal to quantity present in database for that part number.
