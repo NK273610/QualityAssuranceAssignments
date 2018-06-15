@@ -7,12 +7,12 @@ public class AddMoney {
     int numNickels;
     int numQuarters;
 
-   public AddMoney(int numPennies,int numDimes,int numNickels,int numQuarters)
+  public AddMoney(LoadMoney loadMoney)
    {
-       this.numPennies=numPennies;
-       this.numDimes=numDimes;
-       this.numNickels=numNickels;
-       this.numQuarters=numQuarters;
+       this.numPennies=loadMoney.numPennies;
+       this.numDimes=loadMoney.numDimes;
+       this.numNickels=loadMoney.numNickels;
+       this.numQuarters=loadMoney.numQuarters;
    }
 
     public void AddPenny()
