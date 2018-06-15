@@ -21,7 +21,7 @@
 
 ### Q3.
 
-1.	It violates SINGLE RESPONSIBILITY principle.
+1.	It violates ***SINGLE RESPONSIBILITY*** principle.
 
 2.	This principle states that Every class should have a single responsibility. There should never be more than one reason for a class to change. In our example PrintReport.java class does all the task of creating, sending and emailing. So the single class has three tasks to perform which is contrary to our principle.
 
