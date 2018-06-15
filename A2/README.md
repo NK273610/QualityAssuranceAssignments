@@ -9,6 +9,13 @@
 
 3.	So we created an interface Payable having calculatepay method and let the lower level classes implement it. Then in high level class constructor we are passing array of interface object which will take any form of class that implements Payable interface and an integer array containing number of employees. In this way if we want to add more type of workers we have to just create class that implements Payable interface and provide implementation of calculatepay method in the class created and add it in array while calling Employer method. We don't have to change the higher level class in this manner.
 
+#### Driver Code
+```java
+
+        Employer er=new Employer(new Payable[]{new HourlyWorker(),new SalaryWorker()},new Integer[]{5,5});
+        er.outputWageCostsForAllStaff(20);
+        
+```
 
 ### Q2.
 
@@ -45,6 +52,17 @@
 
 3.	So we created an interface Report having PrintGDPReport method and let the lower level classes implement it. Then in high level class constructor we are passing interface object which will take any form of class that implements the interface. In this way if we want to add more type of countries we have to just create new class that implements Report interface and provide implementation of PrintGDPReport method in the class. There is method in CountryGDPReport which calls PrintGDPReport method of respective classes.  We don't have to change the higher level class CountryGDPReport in this manner.
 
+#### Driver Code
+```java
+
+        Report canada=new Canada();
+        Report mexico=new Mexico();
+        CountryGDPReport c1=new CountryGDPReport(canada);
+        CountryGDPReport c2=new CountryGDPReport(mexico);
+        c1.PrintCountryGDPReport();
+        c2.PrintCountryGDPReport();
+        
+```
 
 ### Q6.
 
