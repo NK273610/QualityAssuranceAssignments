@@ -2,17 +2,11 @@ package Question4.javaClass;
 
 import Question4.Interface.Balance;
 
-public abstract class Account implements Balance {
+public abstract class Account  {
 
     public float balance;
 
-    @Override
-    public float GetBalance() {
-
-        return this.balance;
-    }
-
-
+    
     public abstract void Credit(float amount);
 
 
