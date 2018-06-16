@@ -39,10 +39,9 @@
 
 1.	It violates ***LISKOV SUBSTITUTION*** principle.
 
-2.	The principle states that if a program module is using a Base class, then the reference to the Base class can be replaced with a Derived class without affecting the functionality of the program module. In given example when you create a object of base class BankAccount and set the value of balance variable  to some amount. Now you create new class USDollarAccount and extended the base class. If you set the balance for this class your balance variable of base class changes. 
+2.	The principle states that if a program module is using a Base class, then the reference to the Base class can be replaced with a Derived class without affecting the functionality of the program module. In the given example USDollarAccount does not have getBalance method and when it extends Base class Bankaccount it can access it's method. So it is violating Liskov Substitution principle. Moreover if you change balance variable of sub class it also changes the balance variable of BankAccount class when you call getBalance method from BankAccount object.
 
-3.	So we have created a abstract class Account which has all methods and implementation of one common getBalance method. Now both the classes extend this abstract class and by doing this they are not changing each other behaviour. This above method has solved our problem. 
-
+3. We created an Abstract class Account and added float balance, abstract credit and debit methods to it. Then we let the USDollarAccount and BankAccount extend the abstract Account class. In this manner every class has it's own implementation of debit and credit methods and we let the BankAccount implement Balance interface for getBalance method which USDollarAccount does not have it.
 
 ### Q5.
 
